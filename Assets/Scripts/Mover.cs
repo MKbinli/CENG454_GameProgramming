@@ -7,6 +7,7 @@ public class Mover : MonoBehaviour
     [SerializeField] float moveSpeed= 10.0f;
     [SerializeField] float flyingSpeed= 100.0f;
     Rigidbody rb;
+    AudioSource audioSource;
     [SerializeField] InputAction flyObject;
     [SerializeField] InputAction wingsAngle;
 
@@ -18,6 +19,7 @@ public class Mover : MonoBehaviour
     void Start()
     {
         rb=GetComponent<Rigidbody>();
+        audioSource=GetComponent<AudioSource>();
 
     }
     /*
@@ -52,6 +54,15 @@ public class Mover : MonoBehaviour
         if (flyObject.IsPressed())
         {
             rb.AddForce(0, 1 * Time.fixedDeltaTime * flyingSpeed, 0);
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+            
+        }
+        else
+        {
+            audioSource.Stop();
         }
     }
 }
