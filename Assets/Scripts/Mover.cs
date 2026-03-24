@@ -39,7 +39,6 @@ public class Mover : MonoBehaviour
         HandleMovement();
         HandleFly();
         float angle=wingsAngle.ReadValue<float>();
-        Debug.Log("Angle value : "+ angle);
     }
 
     private void HandleMovement()
