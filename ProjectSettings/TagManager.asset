@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Hit
+  - Friendly
   layers:
   - Default
   - TransparentFX
